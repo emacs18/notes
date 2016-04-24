@@ -1,0 +1,15 @@
+This is a collection of notes on various topics of my interest such as emacs,
+python, etc.
+
+I share this hoping to benefit my friends and colleagues to learn and benefit 
+from these wonderful tools.
+
+Documents include
+
+- [[emacs.org]] was created on github in April 2016 cut and pasted from my old notes.
+  I plan on adding many other sections over the next few months.
+
+- spacemacs.org which I plan to write to explain why I'm interested in
+  spacemacs and how I use spacemacs.
+
+- python.org which I plan to write sometime soon.
