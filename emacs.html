@@ -1,0 +1,811 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2016-04-24 Sun 07:32 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>My Emacs Notes</title>
+<meta name="generator" content="Org-mode" />
+<meta name="author" content="Richard Y. Kim" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="http://www.pirilampo.org/styles/bigblow/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="http://www.pirilampo.org/styles/bigblow/css/bigblow.css"/>
+<link rel="stylesheet" type="text/css" href="http://www.pirilampo.org/styles/bigblow/css/hideshow.css"/>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/jquery-ui-1.10.2.min.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/jquery.localscroll-min.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/jquery.scrollTo-1.4.3.1-min.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/jquery.zclip.min.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/bigblow.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/hideshow.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">My Emacs Notes</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org53ae65e">Overview</a>
+<ul>
+<li><a href="#org6a56b7e">Introduction</a></li>
+<li><a href="#learning">How to learn or lookup features</a></li>
+<li><a href="#org52ab61b">Document Format</a></li>
+<li><a href="#org8193d42">GNU info documentation system</a></li>
+</ul>
+</li>
+<li><a href="#resources">Resources</a>
+<ul>
+<li><a href="#orgb493f28">General Resources</a></li>
+<li><a href="#org61fb34c">New User Resources</a></li>
+<li><a href="#org2b2dc48">Emacs News/RSS/Blog Sites</a></li>
+<li><a href="#org60451c9">Startup Files</a></li>
+<li><a href="#orgd4f1e45">Org Mode</a></li>
+</ul>
+</li>
+<li><a href="#package">Package</a>
+<ul>
+<li><a href="#orgcf0a633">Package Overview</a></li>
+</ul>
+</li>
+<li><a href="#orge4dd3b6">Emacs-Lisp</a>
+<ul>
+<li><a href="#elisp_basics">Elisp Basics</a></li>
+<li><a href="#expressions">Elisp Expressions</a></li>
+<li><a href="#symbols">Symbols</a></li>
+<li><a href="#advising">Advising</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org53ae65e" class="outline-2">
+<h2 id="org53ae65e">Overview</h2>
+<div class="outline-text-2" id="text-org53ae65e">
+</div><div id="outline-container-org6a56b7e" class="outline-3">
+<h3 id="org6a56b7e">Introduction</h3>
+<div class="outline-text-3" id="text-org6a56b7e">
+<p>
+This is my collection of GNU/Emacs related notes which I wrote for my
+own use as well as to share with my friends and colleagues.
+</p>
+
+<p>
+This document is written in <a href="http://www.gnu.org/software/emacs/manual/html_mono/org.html#Top">org-mode</a>. It is best viewed using emacs in org
+format, but you can also view the HTML version via a web browser.
+</p>
+
+<p>
+Why another document on emacs when there are so many online resources already?
+Although there are many online resources, almost none of them cross link to the
+official manuals which I think is quite unfortunate, because in my opinion one
+of the best things about emacs is its excellent documentation which can be
+accessed from within emacs in many ways.
+</p>
+
+<p>
+The <a href="http://www.gnu.org/software/emacs/tour/">Official Guided Tour</a> is just about the only online resource that I could
+find that has more than a few links to the official manuals. Unfortunately this
+document does not seem to refer to any unofficial resources outside of <a href="http://gnu.org">gnu.org</a>,
+e.g., there is no mention of packages such as <a href="https://github.com/magit/magit">magit</a>, <a href="https://gitorious.org/evil/evil.git">evil</a>, and many many other
+excellent packages some of which are mentioned in this document. My goals with
+this document is to help my friends and colleagues not only learn many
+features of emacs, but also to get them well versed in emacs documentation
+system so that they can learn all that emacs has to offer on their own.
+</p>
+
+<p>
+This document cross links heavily with the official manuals
+such as the <a href="http://www.gnu.org/software/emacs/manual/html_mono/emacs.html#Top">Emacs Manual</a> and the <a href="http://www.gnu.org/software/emacs/manual/html_mono/elisp.html#Top">Emacs-Lisp Manual</a>.
+If you are reading this document within emacs as org files, then clicking on
+these links bring up GNU <a href="http://www.gnu.org/software/emacs/manual/html_mono/info.html#Top">info</a> browser.  If you are reading the html version
+(e.g., <a href="https://github.com/emacs18/notes">https://github.com/emacs18/notes</a>), then most emacs related links
+will take you to documents located under
+<a href="http://www.gnu.org/software/emacs/manual/html_mono">http://www.gnu.org/software/emacs/manual/html_mono</a>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org483bbcc" class="outline-3">
+<h3 id="learning"><a id="org483bbcc"></a>How to learn or lookup features</h3>
+<div class="outline-text-3" id="text-learning">
+<p>
+The chapter of emacs manual details many ways to get help.
+Also <a href="http://www.gnu.org/software/emacs/manual/html_mono/info.html#Top">info manual</a> is a good way to learn the GNU info browser.
+A few of the topics discussed in these manuals are listed below.
+</p>
+
+<ul class="org-ul">
+<li>Hitting <code>C-h</code> or <code>?</code> following any incomplete key sequence will list all
+possible key bindings, e.g., try typing <code>C-x 4 C-h</code>.
+Also <a href="https://github.com/justbur/emacs-which-key">which-key</a> add-on package shows all possible key bindings as you type.</li>
+<li>Type <code>C-h C-h</code> to see what commands follow <code>C-h</code> and learn as many of these
+as possible.</li>
+<li>helm is another great way.  Just type <code>M-x</code> and start typing space separate
+regexp of the command that you want to locate, e.g., typing "back color"
+shows that <code>set-background-color</code> is the only match.</li>
+</ul>
+
+<p>
+Some of the commands that start with <code>C-h</code> are:
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Key</th>
+<th scope="col" class="org-left">Function</th>
+<th scope="col" class="org-left">Comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left"><a href="http://www.gnu.org/software/emacs/manual/html_mono/info.html#Top">C-h i</a></td>
+<td class="org-left">info</td>
+<td class="org-left">launch GNU/info browser</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.gnu.org/software/emacs/manual/html_mono/emacs.html#Key-Help">C-h k</a></td>
+<td class="org-left">describe-key</td>
+<td class="org-left">describe specified key sequence</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.gnu.org/software/emacs/manual/html_mono/emacs.html#Name-Help">C-h f</a></td>
+<td class="org-left">describe-function</td>
+<td class="org-left">describe specified function</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.gnu.org/software/emacs/manual/html_mono/emacs.html#Name-Help">C-h v</a></td>
+<td class="org-left">describe-variable</td>
+<td class="org-left">describe specified variable</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.gnu.org/software/emacs/manual/html_mono/emacs.html#Misc-Help">C-h S</a></td>
+<td class="org-left">info-lookup-symbol</td>
+<td class="org-left">locate manual section on specified symbol</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.gnu.org/software/emacs/manual/html_mono/emacs.html#Major-Modes">C-h m</a></td>
+<td class="org-left">describe-mode</td>
+<td class="org-left">summary of current major mode</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.gnu.org/software/emacs/manual/html_mono/emacs.html#Apropos">C-h a</a></td>
+<td class="org-left">apropos-command</td>
+<td class="org-left">find symbols by name</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-org52ab61b" class="outline-3">
+<h3 id="org52ab61b">Document Format</h3>
+<div class="outline-text-3" id="text-org52ab61b">
+<p>
+This document is authored in <a href="http://orgmode.org">org-mode</a> format within GNU/Emacs, then converted to
+HTML via emacs. I prefer to use the <i>bigblow</i> HTML theme provided by
+<a href="https://github.com/fniessen/org-html-themes">org-html-themes</a> add-on package.
+</p>
+
+<p>
+I started writing this document in <a href="http://www.gnu.org/software/texinfo/">texinfo</a> format, but then switched over to
+using <a href="http://www.gnu.org/software/emacs/manual/html_mono/org.html#Top">org-mode</a>.
+</p>
+
+<p>
+Although most folks probably read HTML version of this document, I read and
+edit this document in org format.  One key advantage of org mode is that
+links to Emacs and Elisp manuals pop up instantaneously without any delay.
+</p>
+
+<p>
+Most links to the <a href="http://www.gnu.org/software/emacs/manual/html_mono/info.html#Top">info</a> documents are presented using info node name notation,
+e.g., <a href="http://www.gnu.org/software/emacs/manual/html_mono/emacs.html#Help">(emacs)Help</a>.   See <a href="#org8193d42">GNU info documentation system</a> below for more info.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org8193d42" class="outline-3">
+<h3 id="org8193d42">GNU info documentation system</h3>
+<div class="outline-text-3" id="text-org8193d42">
+<p>
+If you hit <code>C-h i</code> or <code>M-x info</code> within emacs, it brings up the <a href="http://www.gnu.org/software/emacs/manual/html_mono/info.html#Top">info</a> document
+browser which allows you to browse many info documents. Hitting <a href="http://www.gnu.org/software/emacs/manual/html_mono/info.html#Help-Int">d</a> within the
+info browser displays all the info files that are currently known to emacs.
+From there you can browse <i>emacs</i>, <i>elisp</i>, or any other document currently
+available.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org85d6916" class="outline-2">
+<h2 id="resources"><a id="org85d6916"></a>Resources</h2>
+<div class="outline-text-2" id="text-resources">
+<p>
+This chapter lists some of the online emacs resources available that I
+came across over the years.
+</p>
+</div>
+
+<div id="outline-container-orgb493f28" class="outline-3">
+<h3 id="orgb493f28">General Resources</h3>
+<div class="outline-text-3" id="text-orgb493f28">
+<p>
+There are just too many resources, but here is my collection of few links.
+</p>
+
+<ul class="org-ul">
+<li><a href="http://www.gnu.org/software/emacs/">Emacs Official Home Page</a> has more modern look and feel as of early 2016.</li>
+<li><a href="http://emacswiki.org">Emacs Wiki</a> is not "official", but it is
+perhaps the best resource in terms of variety of topics covered.</li>
+<li><a href="http://en.wikipedia.org/wiki/Emacs">wikipedia article</a> provides good history of emacs.</li>
+<li><a href="http://www.masteringemacs.org">masteringemacs</a> covers a book with the same name, but it also has
+links to some useful articles as well.
+<a href="http://www.masteringemacs.org/reading-guide">Reading Guide</a> link at the top seems
+especially useful.</li>
+<li><a href="http://directory.fsf.org/wiki/Emacs">Official Wiki</a> does not seem to be that useful.</li>
+<li><a href="https://plus.google.com/communities/114815898697665598016">Google+ community</a> with over 9000 members as of May 2015.</li>
+<li><a href="http://emacs.stackexchange.com/">Emacs at stackexchange</a></li>
+<li><a href="http://tuhdo.github.io/">Tu Do's excellent documents</a> have lots of GIF animations.</li>
+<li><a href="http://www.finseth.com/emacs.html">Emacs Implementations and Literature</a> has encyclopedic collection of different
+implementations of emacs or emacs-like programs, emacs related books, and
+other online resources.</li>
+<li><a href="http://declank.com/building-and-debugging-gnu-emacs-part-1/">Building and Debugging GNU Emacs: Part 1</a> by Declan Kelly seems to have good
+info on how to build emacs on linux as well as debug.</li>
+<li><a href="http://www.reddit.com/r/emacs/comments/3ge5ad/scifi_author_tony_ballantyne_on_emacs/">SciFi author Tony Ballantyne on emacs</a>
+covers how a writer uses emacs to write articles and books</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org61fb34c" class="outline-3">
+<h3 id="org61fb34c">New User Resources</h3>
+<div class="outline-text-3" id="text-org61fb34c">
+<ul class="org-ul">
+<li><a href="emacs-lisp-intro.html#Top">An Introduction to Programming in Emacs Lisp</a></li>
+<li><a href="http://www.gnu.org/software/emacs/tour/">Official Guided Tour</a>
+gives good overview of emacs features with links to emacs manuals.
+One drawback is that this does not refer to resources that are not
+"official", e.g., it mentions viper, but not <a href="https://gitorious.org/evil/evil.git">evil</a>.</li>
+<li><a href="http://www.emacswiki.org/emacs/EmacsNewbie">EmacsNewbie at emacswiki</a> lists other resources for new users.</li>
+<li><a href="http://www.star.bris.ac.uk/bjm/emacs-tips.html">Emacs Tips</a> is someone's attempt at providing emacs tips to colleagues.
+It would be nice if I could join forces with folks like this so that we can
+create an org document with cross links to the manuals.</li>
+<li><a href="http://emacslife.com/how-to-read-emacs-lisp.html">Read Lisp, Tweak Emacs: How to read Emacs Lisp so that you can customize Emacs</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org2b2dc48" class="outline-3">
+<h3 id="org2b2dc48">Emacs News/RSS/Blog Sites</h3>
+<div class="outline-text-3" id="text-org2b2dc48">
+<p>
+There are many blog and other site.
+These are just a few that I came across.
+</p>
+
+<ul class="org-ul">
+<li><a href="http://endlessparentheses.com/">Endless Parentheses</a> is a blog which often has good articles</li>
+<li><a href="http://www.lunaryorn.com/">lunarsite</a> is another blog site</li>
+<li><a href="https://emacs.zeef.com/ehartc">Ernst de Hart</a> - collection of packages categorized by topic</li>
+<li><a href="http://planet.emacsen.org/">Planet Emacsen</a> - RSS Feed</li>
+<li><a href="http://emacsredux.com/">Emacs Redux</a> (last updated on <span class="timestamp-wrapper"><span class="timestamp">[2015-01-15 Thu]</span></span>)</li>
+<li><a href="http://emacs-fu.blogspot.com/">emacs-fu</a> (last updated on <span class="timestamp-wrapper"><span class="timestamp">[2013-03-17 Sun]</span></span>)</li>
+<li><a href="http://batsov.com/articles/2011/11/30/the-ultimate-collection-of-emacs-resources/">Batsov's Collection of Resources</a> (last updated on <span class="timestamp-wrapper"><span class="timestamp">[2011-11-30 Wed]</span></span>)</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org60451c9" class="outline-3">
+<h3 id="org60451c9">Startup Files</h3>
+<div class="outline-text-3" id="text-org60451c9">
+<p>
+These links discuss emacs startup files.
+There are many others I'm sure.
+</p>
+
+<ul class="org-ul">
+<li><a href="http://doc.norang.ca/org-mode.html">Bernt Hansen</a> - "Org Mode - Organize Your Life In Plain Text!" is an excellent
+resource on org-mode as well as many things emacs related.</li>
+<li><a href="http://oremacs.com/2015/04/24/oremacs-config/">Oleh Krehel</a></li>
+<li><a href="http://pages.sachachua.com/.emacs.d/Sacha.html">Sacha Chua</a></li>
+<li><a href="https://github.com/grettke/home">grettke</a> (see ALEC.org)</li>
+<li><a href="https://github.com/larstvei/dot-emacs">Lars Tveito</a></li>
+<li>Ryan Rix: <a href="http://fort.kickass.systems:10082/cgit/fsem.git/tree/">org source</a>, <a href="http://doc.rix.si/org/fsem.html">html version</a>, <a href="http://rix.si/blog/2015/01/05/fsem-001/">2015/01/05 blog</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgd4f1e45" class="outline-3">
+<h3 id="orgd4f1e45">Org Mode</h3>
+<div class="outline-text-3" id="text-orgd4f1e45">
+<p>
+Some links on org mode:
+</p>
+
+<ul class="org-ul">
+<li><a href="http://orgmode.org">org-mode home page</a></li>
+<li><a href="http://orgmode.org/worg">worg</a></li>
+<li><a href="http://www.emacswiki.org/emacs/OrgMode">OrgMode at emacswiki</a></li>
+<li><a href="http://orgmode.org/worg/dev/">worg dev</a></li>
+<li><a href="http://doc.norang.ca/org-mode.html">Bernt Hansen</a> - "Org Mode - Organize Your Life In Plain Text!"</li>
+<li><a href="http://orgmode.org/worg/org-tutorials/">Tutorials at worg</a></li>
+<li><a href="https://www.youtube.com/watch?v=1-dUkyn_fZA&amp;feature=youtube_gdata_player">Emacs + org-mode + python in reproducible research; SciPy 2013 Presentation</a></li>
+<li><a href="http://home.fnal.gov/~neilsen/notebook/orgExamples/org-examples.html">Emacs org-mode examples and cookbook</a> - lots of neat ways to use org</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org114788f" class="outline-2">
+<h2 id="package"><a id="org114788f"></a>Package</h2>
+<div class="outline-text-2" id="text-package">
+</div>
+
+<div id="outline-container-orgcf0a633" class="outline-3">
+<h3 id="orgcf0a633">Package Overview</h3>
+<div class="outline-text-3" id="text-orgcf0a633">
+<p>
+For an overview see <a href="http://www.gnu.org/software/emacs/manual/html_mono/emacs.html#Packages">Packages</a> section of Emacs manual, and <a href="http://www.gnu.org/software/emacs/manual/html_mono/elisp.html#Packaging">Packaging</a> section of
+Emacs-Lisp manual. Also you should be familiar with the following concepts
+explained in <a href="#elisp_basics">Elisp Basics</a> section to understand this section:
+<i>loading</i>, <i>autoload</i>, <code>load-path</code>, <i>byte-compiling</i>, etc.
+</p>
+
+<p>
+A package is a collection of files.  Most often the files are elisp files, but
+it could also include info manuals and other files.  Installing a package
+usually means
+</p>
+
+<ul class="org-ul">
+<li>Creating a new sub-directory under the directory specifiied by
+<a href="http://www.gnu.org/software/emacs/manual/html_mono/elisp.html#Packaging-Basics">package-user-dir</a> variable</li>
+<li>Unpacking files (usually from a tarball) to the new directory</li>
+<li><a href="http://www.gnu.org/software/emacs/manual/html_mono/elisp.html#Byte-Compilation">Byte-compiling</a> all elisp files.</li>
+<li>Generating the <i>autoload file</i>, i.e., a file that contains <a href="http://www.gnu.org/software/emacs/manual/html_mono/emacs.html#Lisp-Libraries">autoload</a> forms.</li>
+<li>Generating info manuals from texinfo source files if any</li>
+</ul>
+
+<p>
+Once installed, a package needs to be <b>activated</b> to make it available for use.
+This includes three things
+</p>
+<ul class="org-ul">
+<li>add installed package directory to <a href="http://www.gnu.org/software/emacs/manual/html_mono/elisp.html#Library-Search">load-path</a></li>
+<li><a href="http://www.gnu.org/software/emacs/manual/html_mono/elisp.html#Loading">Load</a> the autoload file, i.e., <code>&lt;package&gt;-autoloads.el</code> file found in the
+package install directory if any</li>
+<li>add package directory to <a href="http://www.gnu.org/software/emacs/manual/html_mono/info.html#Emacs-Info-Variables">info-directory-list</a> if the package comes with GNU
+info manual</li>
+</ul>
+
+<p>
+All installed packages are <b>activated</b> on emacs startup, i.e., emacs searches
+all sub-directories of <a href="http://www.gnu.org/software/emacs/manual/html_mono/elisp.html#Packaging-Basics">package-user-dir</a> and activates them.
+</p>
+
+<p>
+Following are few variables which control package installation as well activation:
+</p>
+
+<ul class="org-ul">
+<li><a href="http://www.gnu.org/software/emacs/manual/html_mono/elisp.html#Package-Archives">package-archives</a> determines package sources, i.e., location from which to
+find packages</li>
+<li><a href="http://www.gnu.org/software/emacs/manual/html_mono/elisp.html#Packaging-Basics">package-user-dir</a> determines where packages get installed</li>
+<li><a href="http://www.gnu.org/software/emacs/manual/html_mono/elisp.html#Packaging-Basics">package-load-list</a> determines which
+packages are initialized on startup among all the installed
+package.  Default is to initialize all.</li>
+</ul>
+
+<p>
+Following are some of the functions related with packaging:
+</p>
+
+<ul class="org-ul">
+<li><a href="http://www.gnu.org/software/emacs/manual/html_mono/emacs.html#Package-Menu">list-packages</a> pops up "GUI" buffer so
+that you can browes, install, and delete packages interactively.</li>
+<li><a href="http://www.gnu.org/software/emacs/manual/html_mono/elisp.html#Packaging-Basics">package-initialize</a> is implicitly called by default <b>after</b>
+evaluating <code>~/.emacs</code>.  However you can also call this explicitly
+in your <code>~/.emacs</code> early on to <b>activate</b> installed packages.</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orge4dd3b6" class="outline-2">
+<h2 id="orge4dd3b6">Emacs-Lisp</h2>
+<div class="outline-text-2" id="text-orge4dd3b6">
+</div><div id="outline-container-org347278a" class="outline-3">
+<h3 id="elisp_basics"><a id="org347278a"></a>Elisp Basics</h3>
+<div class="outline-text-3" id="text-elisp_basics">
+<p>
+This chapter points out a few basic emacs-lisp concepts to help
+you understand how to install and use add-on packages.
+More comprehensive resources on learning elisp are listed at
+<a href="#org61fb34c">New User Resources</a>
+</p>
+
+<p>
+Topics covered include
+</p>
+<ul class="org-ul">
+<li>elisp files define functions, variables, and other objects</li>
+<li>emacs loads (i.e., evaluates) files to pick up new functions, and also
+possibly modify built-in features</li>
+<li><a href="http://www.gnu.org/software/emacs/manual/html_mono/elisp.html#Library-Search">load-path</a> tells emacs where to find elisp files</li>
+<li><a href="http://www.gnu.org/software/emacs/manual/html_mono/emacs.html#Lisp-Libraries">autoload</a> allows easy access to functions without using too much memory</li>
+<li>elisp files are byte-compiled mainly for faster execution</li>
+</ul>
+
+<p>
+The core emacs code is written in C.  However much of built-in features of emacs
+is written in emacs-lisp which is a lisp dialect customized for use within
+emacs.  The core of emacs is the elisp <b>interpreter</b> (or a <b>virtual machine</b>).
+When you use emacs you are interacting with the interpreter which is in
+infinite <b>REPL</b>, i.e., <a href="http://www.gnu.org/software/emacs/manual/html_mono/elisp.html#Command-Loop">Read-Eval-Print-Loop</a>.  It just sits there and waits for
+you to use input devices such as keyboards and mice to request actions.
+</p>
+
+<p>
+When you type anything on the keyboard or use mouse, you are executing elisp
+function bound to the key or mouse event that you just invoked.  For example if
+you type <code>m</code>, then you are asking the interpreter to call <code>self-insert-command</code>
+elisp function which just inserts the letter just typed into the current buffer.
+However <code>m</code> is bound to <code>dired-mark</code> elisp function instead of
+<code>self-insert-command</code> within buffers in <a href="http://www.gnu.org/software/emacs/manual/html_mono/emacs.html#Dired">dired-mode</a> so that typing <code>m</code> results
+not in inserting letter <code>m</code>, but marking the current item in dired buffer.
+See <a href="http://www.gnu.org/software/emacs/manual/html_mono/emacs.html#Keys">Keys</a>, <a href="http://www.gnu.org/software/emacs/manual/html_mono/emacs.html#Keys">Commands</a>.
+</p>
+
+<p>
+You can use <a href="http://www.gnu.org/software/emacs/manual/html_mono/emacs.html#Key-Help">C-h k</a> to ask emacs to describe what any given key sequence would
+do rather than calling the function bound to that key sequence.  For example
+typing <a href="http://www.gnu.org/software/emacs/manual/html_mono/emacs.html#Key-Help">C-h k</a> followed by <code>m</code> in most buffers would say that the <code>m</code> key
+sequence is bound to <code>self-insert-command</code>.  Similarly typing <a href="http://www.gnu.org/software/emacs/manual/html_mono/emacs.html#Key-Help">C-h k</a> followed
+by <code>C-x C-f</code> brings up <code>*Help*</code> buffer describing <a href="http://www.gnu.org/software/emacs/manual/html_mono/emacs.html#Basic-Files">find-file</a> function.
+<code>*Help*</code> buffer should show <b>files.el</b> link at the top.<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>
+Clicking your mouse button on this <b>files.el</b> link
+should bring up <code>files.el</code> file showing emacs-lisp code that
+implements <code>find-file</code> function, i.e., you can browse the source code that make
+up emacs.  This is one key reason why I almost always use my own build of emacs
+rather than <code>/usr/bin/emacs</code> or other emacs builds provided someone else.
+</p>
+
+<p>
+Emacs function are written via <a href="http://www.gnu.org/software/emacs/manual/html_mono/elisp.html#Defining-Functions">defun</a> (among other ways) like this
+</p>
+<div class="org-src-container">
+
+<pre class="src src-elisp"><span style="color: #3a81c3;">(</span><span style="color: #0000ff; font-weight: bold;">defun</span> <span style="color: #0000ff; font-weight: bold;">f</span> <span style="color: #6c3163;">(</span>arg1 arg2 ...<span style="color: #6c3163;">)</span> ...<span style="color: #3a81c3;">)</span>
+</pre>
+</div>
+<p>
+The side effect of evaluation this expression is that the lisp interpreter
+has added <code>f</code> function to its internal database of known functions.
+Similarly variables are set via <a href="http://www.gnu.org/software/emacs/manual/html_mono/elisp.html#Global-Variables">setq</a>, <a href="http://www.gnu.org/software/emacs/manual/html_mono/elisp.html#Applying-Customizations">custom-set-variables</a>,
+among other ways:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-elisp"><span style="color: #3a81c3;">(</span><span style="color: #0000ff; font-weight: bold;">setq</span> make-backup-files nil<span style="color: #3a81c3;">)</span>
+</pre>
+</div>
+<p>
+Evaluating this make the variable known to emacs.
+</p>
+
+<p>
+Functions and variables are put in emacs-lisp files such as <code>files.el</code> mentioned
+above.  Files are then <a href="http://www.gnu.org/software/emacs/manual/html_mono/elisp.html#Loading">loaded</a> into emacs, i.e., the content of the file is
+<a href="http://www.gnu.org/software/emacs/manual/html_mono/elisp.html#Evaluation">evaluated</a> by the elisp interpreter whose side effect is to tuck away the
+function and variable definitions so that they can be called or accessed.  In
+most cases new emacs-lisp code is made known to the interpreter by loading elisp
+files via one of these ways:
+</p>
+
+<ul class="org-ul">
+<li><a href="http://www.gnu.org/software/emacs/manual/html_mono/elisp.html#Loading">load-file</a> evaluates the specified file whose side effect is to define
+new functions and variables, and also possibly modify existing ones</li>
+<li><a href="http://www.gnu.org/software/emacs/manual/html_mono/elisp.html#Library-Search">load-library</a> first searches the directories listed in <code>load-path</code> (much like
+how linux shells search <code>PATH</code>) for the specified file name, then calls
+<code>load-file</code> on the located file</li>
+<li><a href="http://www.gnu.org/software/emacs/manual/html_mono/elisp.html#Named-Features">require</a> first search <code>features</code> variable to see if the requested module
+is already loaded or not.  If is is already loaded, then nothing is done.
+If it is not, then <code>load-library</code> is called.</li>
+</ul>
+
+<p>
+However you can also <a href="http://www.gnu.org/software/emacs/manual/html_mono/elisp.html#Evaluation">evaluate</a> specific elisp expressions within
+buffers interactively via
+<code>eval-last-sexp</code> (bound to <code>C-x C-e</code>),
+<code>eval-print-last-sexp</code>,
+<code>eval-region</code>,
+<code>eval-current-buffer</code>,
+<code>eval-expression</code>,
+etc.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org47c7079" class="outline-3">
+<h3 id="expressions"><a id="org47c7079"></a>Elisp Expressions</h3>
+<div class="outline-text-3" id="text-expressions">
+<p>
+Resources:
+</p>
+
+<ul class="org-ul">
+<li>Use the <code>*scratch*</code> buffer to experiment and learn.  Use <code>C-j</code> to
+call <code>eval-print-last-sexp</code>.</li>
+<li><a href="emacs-lisp-intro.html#Top">emacs-lisp-intro#Top</a></li>
+<li><a href="http://www.gnu.org/software/emacs/manual/html_mono/elisp.html#Eval">elisp#Eval</a></li>
+<li><a href="http://www.gnu.org/software/emacs/manual/html_mono/elisp.html#Loading">elisp#Loading</a></li>
+</ul>
+
+<p>
+Lisp expressions can be evaluated in many ways:
+</p>
+
+<ul class="org-ul">
+<li><code>C-x C-e</code> bound to <code>eval-last-sexp</code> evaluates one expression at a
+time and prints the result in the mini-buffer</li>
+<li><code>eval-print-last-sexp</code> evaluates one expression and prints the
+result in current buffer.  This is bound to <code>C-j</code> within buffers in
+<code>lisp-interaction-mode</code> mode such as <code>*scratch*</code> buffer.</li>
+<li><a href="http://www.gnu.org/software/emacs/manual/html_mono/elisp.html#Eval">eval-region</a> evaluates a region of elisp code</li>
+<li><a href="http://www.gnu.org/software/emacs/manual/html_mono/elisp.html#Eval">eval-buffer</a> evaluates the whole buffer</li>
+<li><a href="http://www.gnu.org/software/emacs/manual/html_mono/elisp.html#How-Programs-Do-Loading">load</a> evaluates elisp code in a file</li>
+<li><a href="http://www.gnu.org/software/emacs/manual/html_mono/elisp.html#How-Programs-Do-Loading">load-library</a> evaluates elisp
+code in a file but uses LOAD-PATH to locate the requested file</li>
+<li><a href="http://www.gnu.org/software/emacs/manual/html_mono/elisp.html#Named-Features">require</a> looks up
+<a href="http://www.gnu.org/software/emacs/manual/html_mono/elisp.html#Named-Features">features</a> and if not found, then uses <code>load-libary</code> to
+locate and load the file</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgd469e0b" class="outline-3">
+<h3 id="symbols"><a id="orgd469e0b"></a>Symbols</h3>
+<div class="outline-text-3" id="text-symbols">
+<p>
+buffer-local dynamic lexical
+</p>
+
+<p>
+Resources:
+</p>
+
+<ul class="org-ul">
+<li><a href="http://www.gnu.org/software/emacs/manual/html_mono/elisp.html#Symbols">elisp#Symbols</a></li>
+<li><a href="http://www.gnu.org/software/emacs/manual/html_mono/elisp.html#Variables">elisp#Variables</a></li>
+<li><a href="http://www.gnu.org/software/emacs/manual/html_mono/elisp.html#Functions">elisp#Functions</a></li>
+<li><a href="http://www.gnu.org/software/emacs/manual/html_mono/elisp.html#Eval">elisp#Eval</a></li>
+</ul>
+
+<p>
+Things to note:
+</p>
+
+<ul class="org-ul">
+<li>a symbol is an object that has for components: name, value,
+function and plist</li>
+<li>Basic functions are <a href="http://www.gnu.org/software/emacs/manual/html_mono/elisp.html#Symbols">symbolp</a>, <a href="http://www.gnu.org/software/emacs/manual/html_mono/elisp.html#Creating-Symbols">symbol-name</a>, <a href="http://www.gnu.org/software/emacs/manual/html_mono/elisp.html#Accessing-Variables">symbol-value</a>, <a href="http://www.gnu.org/software/emacs/manual/html_mono/elisp.html#Creating-Symbols">make-symbol</a>,
+<a href="http://www.gnu.org/software/emacs/manual/html_mono/elisp.html#Creating-Symbols">intern</a>, <a href="http://www.gnu.org/software/emacs/manual/html_mono/elisp.html#Creating-Symbols">unintern</a>.</li>
+<li>Property list functions are:
+<a href="http://www.gnu.org/software/emacs/manual/html_mono/elisp.html#Symbol-Plists">get</a>, <a href="http://www.gnu.org/software/emacs/manual/html_mono/elisp.html#Symbol-Plists">put</a>, <a href="http://www.gnu.org/software/emacs/manual/html_mono/elisp.html#Symbol-Plists">symbol-plist</a>, <a href="http://www.gnu.org/software/emacs/manual/html_mono/elisp.html#Symbol-Plists">set-plist</a></li>
+<li><a href="http://www.gnu.org/software/emacs/manual/html_mono/elisp.html#Standard-Properties">elisp#Standard Properties</a> lists properties that have
+predefined meaning, e.g., <code>disabled</code> and <code>variable-documentation</code>.</li>
+<li><a href="http://www.gnu.org/software/emacs/manual/html_mono/elisp.html#Symbols">obarray</a> is the container with all <a href="http://www.gnu.org/software/emacs/manual/html_mono/elisp.html#Creating-Symbols">interned</a> symbols.</li>
+<li><code>mapatoms</code> calls a function on all symbols.</li>
+</ul>
+
+<p>
+Bindings:
+</p>
+<ul class="org-ul">
+<li><a href="http://www.gnu.org/software/emacs/manual/html_mono/elisp.html#Dynamic-Binding">elisp#Dynamic Binding</a></li>
+<li><a href="http://www.gnu.org/software/emacs/manual/html_mono/elisp.html#Lexical-Binding">elisp#Lexical Binding</a></li>
+<li><a href="http://www.gnu.org/software/emacs/manual/html_mono/elisp.html#Closures">elisp#Closures</a></li>
+<li><a href="http://www.gnu.org/software/emacs/manual/html_mono/elisp.html#Using-Lexical-Binding">lexical-binding</a> variable</li>
+<li><a href="http://www.gnu.org/software/emacs/manual/html_mono/elisp.html#Using-Lexical-Binding">special-variable-p</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orga674e12" class="outline-3">
+<h3 id="advising"><a id="orga674e12"></a>Advising</h3>
+<div class="outline-text-3" id="text-advising">
+<p>
+Official documentation include:
+</p>
+
+<ul class="org-ul">
+<li><a href="http://www.gnu.org/software/emacs/manual/html_mono/elisp.html#Advising-Functions">Advising Functions</a> which discuss
+the new (as of emacs 24.x) way to advise functions.</li>
+<li><a href="http://www.gnu.org/software/emacs/manual/html_mono/elisp.html#Porting-old-advices">Porting old advices</a> shows you
+how you can convert old style advices which used <code>defadvice</code> macro.</li>
+</ul>
+
+<p>
+Advising a functions means modifying the behavior of even built-in emacs
+functions to suit your needs.  This is one of the neatest features of
+lisp which I haven't yet seen in other languages that I used.  Advising
+was first added to emacs in late 1980's or early 1990's in emacs version
+</p>
+<ol class="org-ol">
+<li></li>
+</ol>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
+If you don't see a link to an elisp file within <code>*Help*</code> buffer, it
+probably means that you don't have the elisp source files installed.  On Debian
+derived GNU/Linux systems, you can fix this via something like
+<code>sudo apt-get install emacs24-el</code>.
+</p></div></div>
+
+
+</div>
+</div></div>
+<div id="postamble" class="status">
+<p class="author">Author: Richard Y. Kim</p>
+<p class="date">Created: 2016-04-24 Sun 07:32</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
