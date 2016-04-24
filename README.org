@@ -1,15 +1,34 @@
 This is a collection of notes on various topics of my interest such as emacs,
 python, etc.
 
-I share this hoping to benefit my friends and colleagues to learn and benefit 
+I share this hoping to benefit my friends and colleagues to learn and benefit
 from these wonderful tools.
 
-Documents include
+*Documents*
 
-- [[emacs.org]] was created on github in April 2016 cut and pasted from my old notes.
+- [[file:emacs.org][emacs.org]] was created on github in April 2016 cut and pasted from my old notes.
   I plan on adding many other sections over the next few months.
+
+- [[file:emacs.html][emacs.html]] was generated from [[file:emacs.org][emacs.org]] via emacs.
 
 - spacemacs.org which I plan to write to explain why I'm interested in
   spacemacs and how I use spacemacs.
 
 - python.org which I plan to write sometime soon.
+
+*How to read*
+
+Unfortunately all the documents are not presented correctly when viewed via
+github.  For example if [[file:emacs.org][emacs.org]] is viewed
+via github, all the /info/ links are not translated into HTML links.
+Also [[file:emacs.html][emacs.html]] is displayed by github as raw html rather than rendering it.
+
+Thus I suggest that you read these documents by downloading them first via
+
+#+BEGIN_EXAMPLE
+cd /SOME/DIR
+git clone https://github.com/emacs18/notes
+#+END_EXAMPLE
+
+then read [[file:emacs.org]] using emacs or point your web browser to
+=file:///SOME/DIR/notes/emacs.html=.
