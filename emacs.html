@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2016-04-24 Sun 07:32 -->
+<!-- 2016-04-24 Sun 08:22 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>My Emacs Notes</title>
@@ -159,29 +159,29 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org53ae65e">Overview</a>
+<li><a href="#org6cb6071">Overview</a>
 <ul>
-<li><a href="#org6a56b7e">Introduction</a></li>
+<li><a href="#orgd508a24">Introduction</a></li>
 <li><a href="#learning">How to learn or lookup features</a></li>
-<li><a href="#org52ab61b">Document Format</a></li>
-<li><a href="#org8193d42">GNU info documentation system</a></li>
+<li><a href="#orgc5e666a">Document Format</a></li>
+<li><a href="#org80c44b6">GNU info documentation system</a></li>
 </ul>
 </li>
 <li><a href="#resources">Resources</a>
 <ul>
-<li><a href="#orgb493f28">General Resources</a></li>
-<li><a href="#org61fb34c">New User Resources</a></li>
-<li><a href="#org2b2dc48">Emacs News/RSS/Blog Sites</a></li>
-<li><a href="#org60451c9">Startup Files</a></li>
-<li><a href="#orgd4f1e45">Org Mode</a></li>
+<li><a href="#orge1e3769">General Resources</a></li>
+<li><a href="#org1448624">New User Resources</a></li>
+<li><a href="#orgc8e3535">Emacs News/RSS/Blog Sites</a></li>
+<li><a href="#org338a6d4">Startup Files</a></li>
+<li><a href="#org1c02baf">Org Mode</a></li>
 </ul>
 </li>
 <li><a href="#package">Package</a>
 <ul>
-<li><a href="#orgcf0a633">Package Overview</a></li>
+<li><a href="#orge58b3">Package Overview</a></li>
 </ul>
 </li>
-<li><a href="#orge4dd3b6">Emacs-Lisp</a>
+<li><a href="#orgd103a2a">Emacs-Lisp</a>
 <ul>
 <li><a href="#elisp_basics">Elisp Basics</a></li>
 <li><a href="#expressions">Elisp Expressions</a></li>
@@ -193,15 +193,22 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-org53ae65e" class="outline-2">
-<h2 id="org53ae65e">Overview</h2>
-<div class="outline-text-2" id="text-org53ae65e">
-</div><div id="outline-container-org6a56b7e" class="outline-3">
-<h3 id="org6a56b7e">Introduction</h3>
-<div class="outline-text-3" id="text-org6a56b7e">
+<div id="outline-container-org6cb6071" class="outline-2">
+<h2 id="org6cb6071">Overview</h2>
+<div class="outline-text-2" id="text-org6cb6071">
+</div><div id="outline-container-orgd508a24" class="outline-3">
+<h3 id="orgd508a24">Introduction</h3>
+<div class="outline-text-3" id="text-orgd508a24">
 <p>
 This is my collection of GNU/Emacs related notes which I wrote for my
 own use as well as to share with my friends and colleagues.
+This may be a bit chaotic, because much of it was lifted from a much larger
+document which I have been carrying around for many years.
+</p>
+
+<p>
+<b>Warning</b>: many links are not properly rendered by github.
+Please see <a href="README.html">README.org</a> on how best to read this document.
 </p>
 
 <p>
@@ -240,8 +247,8 @@ will take you to documents located under
 </div>
 </div>
 
-<div id="outline-container-org483bbcc" class="outline-3">
-<h3 id="learning"><a id="org483bbcc"></a>How to learn or lookup features</h3>
+<div id="outline-container-org308d8f1" class="outline-3">
+<h3 id="learning"><a id="org308d8f1"></a>How to learn or lookup features</h3>
 <div class="outline-text-3" id="text-learning">
 <p>
 The chapter of emacs manual details many ways to get help.
@@ -327,9 +334,9 @@ Some of the commands that start with <code>C-h</code> are:
 </div>
 </div>
 
-<div id="outline-container-org52ab61b" class="outline-3">
-<h3 id="org52ab61b">Document Format</h3>
-<div class="outline-text-3" id="text-org52ab61b">
+<div id="outline-container-orgc5e666a" class="outline-3">
+<h3 id="orgc5e666a">Document Format</h3>
+<div class="outline-text-3" id="text-orgc5e666a">
 <p>
 This document is authored in <a href="http://orgmode.org">org-mode</a> format within GNU/Emacs, then converted to
 HTML via emacs. I prefer to use the <i>bigblow</i> HTML theme provided by
@@ -349,14 +356,14 @@ links to Emacs and Elisp manuals pop up instantaneously without any delay.
 
 <p>
 Most links to the <a href="http://www.gnu.org/software/emacs/manual/html_mono/info.html#Top">info</a> documents are presented using info node name notation,
-e.g., <a href="http://www.gnu.org/software/emacs/manual/html_mono/emacs.html#Help">(emacs)Help</a>.   See <a href="#org8193d42">GNU info documentation system</a> below for more info.
+e.g., <a href="http://www.gnu.org/software/emacs/manual/html_mono/emacs.html#Help">(emacs)Help</a>.   See <a href="#org80c44b6">GNU info documentation system</a> below for more info.
 </p>
 </div>
 </div>
 
-<div id="outline-container-org8193d42" class="outline-3">
-<h3 id="org8193d42">GNU info documentation system</h3>
-<div class="outline-text-3" id="text-org8193d42">
+<div id="outline-container-org80c44b6" class="outline-3">
+<h3 id="org80c44b6">GNU info documentation system</h3>
+<div class="outline-text-3" id="text-org80c44b6">
 <p>
 If you hit <code>C-h i</code> or <code>M-x info</code> within emacs, it brings up the <a href="http://www.gnu.org/software/emacs/manual/html_mono/info.html#Top">info</a> document
 browser which allows you to browse many info documents. Hitting <a href="http://www.gnu.org/software/emacs/manual/html_mono/info.html#Help-Int">d</a> within the
@@ -368,8 +375,8 @@ available.
 </div>
 </div>
 
-<div id="outline-container-org85d6916" class="outline-2">
-<h2 id="resources"><a id="org85d6916"></a>Resources</h2>
+<div id="outline-container-org9f790eb" class="outline-2">
+<h2 id="resources"><a id="org9f790eb"></a>Resources</h2>
 <div class="outline-text-2" id="text-resources">
 <p>
 This chapter lists some of the online emacs resources available that I
@@ -377,9 +384,9 @@ came across over the years.
 </p>
 </div>
 
-<div id="outline-container-orgb493f28" class="outline-3">
-<h3 id="orgb493f28">General Resources</h3>
-<div class="outline-text-3" id="text-orgb493f28">
+<div id="outline-container-orge1e3769" class="outline-3">
+<h3 id="orge1e3769">General Resources</h3>
+<div class="outline-text-3" id="text-orge1e3769">
 <p>
 There are just too many resources, but here is my collection of few links.
 </p>
@@ -408,9 +415,9 @@ covers how a writer uses emacs to write articles and books</li>
 </div>
 </div>
 
-<div id="outline-container-org61fb34c" class="outline-3">
-<h3 id="org61fb34c">New User Resources</h3>
-<div class="outline-text-3" id="text-org61fb34c">
+<div id="outline-container-org1448624" class="outline-3">
+<h3 id="org1448624">New User Resources</h3>
+<div class="outline-text-3" id="text-org1448624">
 <ul class="org-ul">
 <li><a href="emacs-lisp-intro.html#Top">An Introduction to Programming in Emacs Lisp</a></li>
 <li><a href="http://www.gnu.org/software/emacs/tour/">Official Guided Tour</a>
@@ -426,9 +433,9 @@ create an org document with cross links to the manuals.</li>
 </div>
 </div>
 
-<div id="outline-container-org2b2dc48" class="outline-3">
-<h3 id="org2b2dc48">Emacs News/RSS/Blog Sites</h3>
-<div class="outline-text-3" id="text-org2b2dc48">
+<div id="outline-container-orgc8e3535" class="outline-3">
+<h3 id="orgc8e3535">Emacs News/RSS/Blog Sites</h3>
+<div class="outline-text-3" id="text-orgc8e3535">
 <p>
 There are many blog and other site.
 These are just a few that I came across.
@@ -446,9 +453,9 @@ These are just a few that I came across.
 </div>
 </div>
 
-<div id="outline-container-org60451c9" class="outline-3">
-<h3 id="org60451c9">Startup Files</h3>
-<div class="outline-text-3" id="text-org60451c9">
+<div id="outline-container-org338a6d4" class="outline-3">
+<h3 id="org338a6d4">Startup Files</h3>
+<div class="outline-text-3" id="text-org338a6d4">
 <p>
 These links discuss emacs startup files.
 There are many others I'm sure.
@@ -466,9 +473,9 @@ resource on org-mode as well as many things emacs related.</li>
 </div>
 </div>
 
-<div id="outline-container-orgd4f1e45" class="outline-3">
-<h3 id="orgd4f1e45">Org Mode</h3>
-<div class="outline-text-3" id="text-orgd4f1e45">
+<div id="outline-container-org1c02baf" class="outline-3">
+<h3 id="org1c02baf">Org Mode</h3>
+<div class="outline-text-3" id="text-org1c02baf">
 <p>
 Some links on org mode:
 </p>
@@ -487,14 +494,14 @@ Some links on org mode:
 </div>
 </div>
 
-<div id="outline-container-org114788f" class="outline-2">
-<h2 id="package"><a id="org114788f"></a>Package</h2>
+<div id="outline-container-orgcfc1ad8" class="outline-2">
+<h2 id="package"><a id="orgcfc1ad8"></a>Package</h2>
 <div class="outline-text-2" id="text-package">
 </div>
 
-<div id="outline-container-orgcf0a633" class="outline-3">
-<h3 id="orgcf0a633">Package Overview</h3>
-<div class="outline-text-3" id="text-orgcf0a633">
+<div id="outline-container-orge58b3" class="outline-3">
+<h3 id="orge58b3">Package Overview</h3>
+<div class="outline-text-3" id="text-orge58b3">
 <p>
 For an overview see <a href="http://www.gnu.org/software/emacs/manual/html_mono/emacs.html#Packages">Packages</a> section of Emacs manual, and <a href="http://www.gnu.org/software/emacs/manual/html_mono/elisp.html#Packaging">Packaging</a> section of
 Emacs-Lisp manual. Also you should be familiar with the following concepts
@@ -562,17 +569,17 @@ in your <code>~/.emacs</code> early on to <b>activate</b> installed packages.</l
 </div>
 </div>
 
-<div id="outline-container-orge4dd3b6" class="outline-2">
-<h2 id="orge4dd3b6">Emacs-Lisp</h2>
-<div class="outline-text-2" id="text-orge4dd3b6">
-</div><div id="outline-container-org347278a" class="outline-3">
-<h3 id="elisp_basics"><a id="org347278a"></a>Elisp Basics</h3>
+<div id="outline-container-orgd103a2a" class="outline-2">
+<h2 id="orgd103a2a">Emacs-Lisp</h2>
+<div class="outline-text-2" id="text-orgd103a2a">
+</div><div id="outline-container-org33e5eb9" class="outline-3">
+<h3 id="elisp_basics"><a id="org33e5eb9"></a>Elisp Basics</h3>
 <div class="outline-text-3" id="text-elisp_basics">
 <p>
 This chapter points out a few basic emacs-lisp concepts to help
 you understand how to install and use add-on packages.
 More comprehensive resources on learning elisp are listed at
-<a href="#org61fb34c">New User Resources</a>
+<a href="#org1448624">New User Resources</a>
 </p>
 
 <p>
@@ -677,8 +684,8 @@ etc.
 </div>
 </div>
 
-<div id="outline-container-org47c7079" class="outline-3">
-<h3 id="expressions"><a id="org47c7079"></a>Elisp Expressions</h3>
+<div id="outline-container-orgb04c20d" class="outline-3">
+<h3 id="expressions"><a id="orgb04c20d"></a>Elisp Expressions</h3>
 <div class="outline-text-3" id="text-expressions">
 <p>
 Resources:
@@ -714,8 +721,8 @@ locate and load the file</li>
 </div>
 </div>
 
-<div id="outline-container-orgd469e0b" class="outline-3">
-<h3 id="symbols"><a id="orgd469e0b"></a>Symbols</h3>
+<div id="outline-container-org1345b82" class="outline-3">
+<h3 id="symbols"><a id="org1345b82"></a>Symbols</h3>
 <div class="outline-text-3" id="text-symbols">
 <p>
 buffer-local dynamic lexical
@@ -762,8 +769,8 @@ Bindings:
 </div>
 </div>
 
-<div id="outline-container-orga674e12" class="outline-3">
-<h3 id="advising"><a id="orga674e12"></a>Advising</h3>
+<div id="outline-container-org8f02965" class="outline-3">
+<h3 id="advising"><a id="org8f02965"></a>Advising</h3>
 <div class="outline-text-3" id="text-advising">
 <p>
 Official documentation include:
@@ -804,7 +811,7 @@ derived GNU/Linux systems, you can fix this via something like
 </div></div>
 <div id="postamble" class="status">
 <p class="author">Author: Richard Y. Kim</p>
-<p class="date">Created: 2016-04-24 Sun 07:32</p>
+<p class="date">Created: 2016-04-24 Sun 08:22</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

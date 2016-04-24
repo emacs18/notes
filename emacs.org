@@ -13,6 +13,9 @@ own use as well as to share with my friends and colleagues.
 This may be a bit chaotic, because much of it was lifted from a much larger
 document which I have been carrying around for many years.
 
+*Warning*: many links are not properly rendered by github.
+Please see [[file:README.org][README.org]] on how best to read this document.
+
 This document is written in [[info:org#Top][org-mode]]. It is best viewed using emacs in org
 format, but you can also view the HTML version via a web browser.
 
