@@ -6,22 +6,22 @@ from these wonderful tools.
 
 *Documents*
 
-- [[file:emacs.org][emacs.org]] was created on github in April 2016 cut and pasted from my old notes.
+- [[file:emacs.org][emacs.org]] was uploaded to github in April 2016 by cutting and pasting from my old notes.
   I plan on adding many other sections over the next few months.
 
 - [[file:emacs.html][emacs.html]] was generated from [[file:emacs.org][emacs.org]] via emacs.
 
 - spacemacs.org which I plan to write to explain why I'm interested in
-  spacemacs and how I use spacemacs.
+  spacemacs and how I use it.
 
 - python.org which I plan to write sometime soon.
 
 *How to read*
 
-Unfortunately all the documents are not presented correctly when viewed via
-github.  For example if [[file:emacs.org][emacs.org]] is viewed
-via github, all the /info/ links are not translated into HTML links.
-Also [[file:emacs.html][emacs.html]] is displayed by github as raw html rather than rendering it.
+Unfortunately the documents are not presented correctly when viewed via URLs
+starting with =http://github.com=. For example if [[file:emacs.org][emacs.org]] is viewed via github,
+all the /info/ links are not translated into HTML links. Also [[file:emacs.html][emacs.html]] is
+displayed by github as raw html rather than rendering it.
 
 Thus I suggest that you read these documents by downloading them first via
 
@@ -30,5 +30,5 @@ cd /SOME/DIR
 git clone https://github.com/emacs18/notes
 #+END_EXAMPLE
 
-then read [[file:emacs.org]] using emacs or point your web browser to
+then reading [[file:emacs.org]] using emacs or pointing your web browser to
 =file:///SOME/DIR/notes/emacs.html=.
