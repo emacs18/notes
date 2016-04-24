@@ -1,0 +1,414 @@
+#+TITLE:     My Emacs Notes
+#+AUTHOR:    Richard Y. Kim
+#+EMAIL:     emacs18@gmail.com
+#+LANGUAGE:  en
+#+OPTIONS:   H:3 num:nil toc:t \n:nil |:t ^:nil -:t f:t *:t d:nil tags:not-in-toc
+#+SETUPFILE: theme-bigblow.setup
+
+* Overview
+** Introduction
+
+This is my collection of GNU/Emacs related notes which I wrote for my
+own use as well as to share with my friends and colleagues.
+This may be a bit chaotic, because much of it was lifted from a much larger
+document which I have been carrying around for many years.
+
+This document is written in [[info:org#Top][org-mode]]. It is best viewed using emacs in org
+format, but you can also view the HTML version via a web browser.
+
+Why another document on emacs when there are so many online resources already?
+Although there are many online resources, almost none of them cross link to the
+official manuals which I think is quite unfortunate, because in my opinion one
+of the best things about emacs is its excellent documentation which can be
+accessed from within emacs in many ways.
+
+The [[http://www.gnu.org/software/emacs/tour/][Official Guided Tour]] is just about the only online resource that I could
+find that has more than a few links to the official manuals. Unfortunately this
+document does not seem to refer to any unofficial resources outside of [[http://gnu.org][gnu.org]],
+e.g., there is no mention of packages such as [[https://github.com/magit/magit][magit]], [[https://gitorious.org/evil/evil.git][evil]], and many many other
+excellent packages some of which are mentioned in this document. My goals with
+this document is to help my friends and colleagues not only learn many
+features of emacs, but also to get them well versed in emacs documentation
+system so that they can learn all that emacs has to offer on their own.
+
+This document cross links heavily with the official manuals
+such as the [[info:emacs#Top][Emacs Manual]] and the [[info:elisp#Top][Emacs-Lisp Manual]].
+If you are reading this document within emacs as org files, then clicking on
+these links bring up GNU [[info:info][info]] browser.  If you are reading the html version
+(e.g., https://github.com/emacs18/notes), then most emacs related links
+will take you to documents located under
+http://www.gnu.org/software/emacs/manual/html_mono.
+
+** How to learn or lookup features
+:PROPERTIES:
+:CUSTOM_ID: learning
+:END:
+#+INDEX: learning
+
+The chapter of emacs manual details many ways to get help.
+Also [[info:info#Top][info manual]] is a good way to learn the GNU info browser.
+A few of the topics discussed in these manuals are listed below.
+
+- Hitting =C-h= or =?= following any incomplete key sequence will list all
+  possible key bindings, e.g., try typing =C-x 4 C-h=.
+  Also [[https://github.com/justbur/emacs-which-key][which-key]] add-on package shows all possible key bindings as you type.
+- Type =C-h C-h= to see what commands follow =C-h= and learn as many of these
+  as possible.
+- helm is another great way.  Just type =M-x= and start typing space separate
+  regexp of the command that you want to locate, e.g., typing "back color"
+  shows that =set-background-color= is the only match.
+
+Some of the commands that start with =C-h= are:
+|-------+--------------------+-------------------------------------------|
+| Key   | Function           | Comment                                   |
+|-------+--------------------+-------------------------------------------|
+| [[info:info#Top][C-h i]] | info               | launch GNU/info browser                   |
+| [[info:emacs#Key Help][C-h k]] | describe-key       | describe specified key sequence           |
+| [[info:emacs#Name Help][C-h f]] | describe-function  | describe specified function               |
+| [[info:emacs#Name Help][C-h v]] | describe-variable  | describe specified variable               |
+| [[info:emacs#Misc Help][C-h S]] | info-lookup-symbol | locate manual section on specified symbol |
+| [[info:emacs#Major Modes][C-h m]] | describe-mode      | summary of current major mode             |
+| [[info:emacs#Apropos][C-h a]] | apropos-command    | find symbols by name                      |
+|-------+--------------------+-------------------------------------------|
+
+** Document Format
+
+This document is authored in [[http://orgmode.org][org-mode]] format within GNU/Emacs, then converted to
+HTML via emacs. I prefer to use the /bigblow/ HTML theme provided by
+[[https://github.com/fniessen/org-html-themes][org-html-themes]] add-on package.
+
+I started writing this document in [[http://www.gnu.org/software/texinfo/][texinfo]] format, but then switched over to
+using [[info:org][org-mode]].
+
+Although most folks probably read HTML version of this document, I read and
+edit this document in org format.  One key advantage of org mode is that
+links to Emacs and Elisp manuals pop up instantaneously without any delay.
+
+Most links to the [[info:info][info]] documents are presented using info node name notation,
+e.g., [[info:emacs#Help][(emacs)Help]].   See [[GNU info documentation system]] below for more info.
+
+** GNU info documentation system
+
+If you hit =C-h i= or =M-x info= within emacs, it brings up the [[info:info][info]] document
+browser which allows you to browse many info documents. Hitting [[info:info#Help-Int][d]] within the
+info browser displays all the info files that are currently known to emacs.
+From there you can browse /emacs/, /elisp/, or any other document currently
+available.
+
+* Resources
+  :PROPERTIES:
+  :CUSTOM_ID: resources
+  :END:
+#+INDEX: resources
+
+This chapter lists some of the online emacs resources available that I
+came across over the years.
+
+** General Resources
+
+There are just too many resources, but here is my collection of few links.
+
+- [[http://www.gnu.org/software/emacs/][Emacs Official Home Page]] has more modern look and feel as of early 2016.
+- [[http://emacswiki.org][Emacs Wiki]] is not "official", but it is
+  perhaps the best resource in terms of variety of topics covered.
+- [[http://en.wikipedia.org/wiki/Emacs][wikipedia article]] provides good history of emacs.
+- [[http://www.masteringemacs.org][masteringemacs]] covers a book with the same name, but it also has
+  links to some useful articles as well.
+  [[http://www.masteringemacs.org/reading-guide][Reading Guide]] link at the top seems
+  especially useful.
+- [[http://directory.fsf.org/wiki/Emacs][Official Wiki]] does not seem to be that useful.
+- [[https://plus.google.com/communities/114815898697665598016][Google+ community]] with over 9000 members as of May 2015.
+- [[http://emacs.stackexchange.com/][Emacs at stackexchange]]
+- [[http://tuhdo.github.io/][Tu Do's excellent documents]] have lots of GIF animations.
+- [[http://www.finseth.com/emacs.html][Emacs Implementations and Literature]] has encyclopedic collection of different
+  implementations of emacs or emacs-like programs, emacs related books, and
+  other online resources.
+- [[http://declank.com/building-and-debugging-gnu-emacs-part-1/][Building and Debugging GNU Emacs: Part 1]] by Declan Kelly seems to have good
+  info on how to build emacs on linux as well as debug.
+- [[http://www.reddit.com/r/emacs/comments/3ge5ad/scifi_author_tony_ballantyne_on_emacs/][SciFi author Tony Ballantyne on emacs]]
+  covers how a writer uses emacs to write articles and books
+
+** New User Resources
+
+- [[info:emacs-lisp-intro][An Introduction to Programming in Emacs Lisp]]
+- [[http://www.gnu.org/software/emacs/tour/][Official Guided Tour]]
+  gives good overview of emacs features with links to emacs manuals.
+  One drawback is that this does not refer to resources that are not
+  "official", e.g., it mentions viper, but not [[https://gitorious.org/evil/evil.git][evil]].
+- [[http://www.emacswiki.org/emacs/EmacsNewbie][EmacsNewbie at emacswiki]] lists other resources for new users.
+- [[http://www.star.bris.ac.uk/bjm/emacs-tips.html][Emacs Tips]] is someone's attempt at providing emacs tips to colleagues.
+  It would be nice if I could join forces with folks like this so that we can
+  create an org document with cross links to the manuals.
+- [[http://emacslife.com/how-to-read-emacs-lisp.html][Read Lisp, Tweak Emacs: How to read Emacs Lisp so that you can customize Emacs]]
+
+** Emacs News/RSS/Blog Sites
+
+There are many blog and other site.
+These are just a few that I came across.
+
+- [[http://endlessparentheses.com/][Endless Parentheses]] is a blog which often has good articles
+- [[http://www.lunaryorn.com/][lunarsite]] is another blog site
+- [[https://emacs.zeef.com/ehartc][Ernst de Hart]] - collection of packages categorized by topic
+- [[http://planet.emacsen.org/][Planet Emacsen]] - RSS Feed
+- [[http://emacsredux.com/][Emacs Redux]] (last updated on [2015-01-15])
+- [[http://emacs-fu.blogspot.com/][emacs-fu]] (last updated on [2013-03-17])
+- [[http://batsov.com/articles/2011/11/30/the-ultimate-collection-of-emacs-resources/][Batsov's Collection of Resources]] (last updated on [2011-11-30])
+
+** Startup Files
+
+These links discuss emacs startup files.
+There are many others I'm sure.
+
+- [[http://doc.norang.ca/org-mode.html][Bernt Hansen]] - "Org Mode - Organize Your Life In Plain Text!" is an excellent
+  resource on org-mode as well as many things emacs related.
+- [[http://oremacs.com/2015/04/24/oremacs-config/][Oleh Krehel]]
+- [[http://pages.sachachua.com/.emacs.d/Sacha.html][Sacha Chua]]
+- [[https://github.com/grettke/home][grettke]] (see ALEC.org)
+- [[https://github.com/larstvei/dot-emacs][Lars Tveito]]
+- Ryan Rix: [[http://fort.kickass.systems:10082/cgit/fsem.git/tree/][org source]], [[http://doc.rix.si/org/fsem.html][html version]], [[http://rix.si/blog/2015/01/05/fsem-001/][2015/01/05 blog]]
+
+** Org Mode
+
+Some links on org mode:
+
+- [[http://orgmode.org][org-mode home page]]
+- [[http://orgmode.org/worg][worg]]
+- [[http://www.emacswiki.org/emacs/OrgMode][OrgMode at emacswiki]]
+- [[http://orgmode.org/worg/dev/][worg dev]]
+- [[http://doc.norang.ca/org-mode.html][Bernt Hansen]] - "Org Mode - Organize Your Life In Plain Text!"
+- [[http://orgmode.org/worg/org-tutorials/][Tutorials at worg]]
+- [[https://www.youtube.com/watch?v%3D1-dUkyn_fZA&feature%3Dyoutube_gdata_player][Emacs + org-mode + python in reproducible research; SciPy 2013 Presentation]]
+- [[http://home.fnal.gov/~neilsen/notebook/orgExamples/org-examples.html][Emacs org-mode examples and cookbook]] - lots of neat ways to use org
+
+* Package
+  :PROPERTIES:
+  :CUSTOM_ID: package
+  :END:
+#+INDEX: package
+
+** Package Overview
+
+For an overview see [[info:emacs#Packages][Packages]] section of Emacs manual, and [[info:elisp#Packaging][Packaging]] section of
+Emacs-Lisp manual. Also you should be familiar with the following concepts
+explained in [[Elisp Basics]] section to understand this section:
+/loading/, /autoload/, =load-path=, /byte-compiling/, etc.
+
+A package is a collection of files.  Most often the files are elisp files, but
+it could also include info manuals and other files.  Installing a package
+usually means
+
+- Creating a new sub-directory under the directory specifiied by
+  [[info:elisp#Packaging Basics][package-user-dir]] variable
+- Unpacking files (usually from a tarball) to the new directory
+- [[info:elisp#Byte Compilation][Byte-compiling]] all elisp files.
+- Generating the /autoload file/, i.e., a file that contains [[info:emacs#Lisp Libraries][autoload]] forms.
+- Generating info manuals from texinfo source files if any
+
+Once installed, a package needs to be *activated* to make it available for use.
+This includes three things
+- add installed package directory to [[info:elisp#Library%20Search][load-path]]
+- [[info:elisp#Loading][Load]] the autoload file, i.e., =<package>-autoloads.el= file found in the
+  package install directory if any
+- add package directory to [[info:info#Emacs Info Variables][info-directory-list]] if the package comes with GNU
+  info manual
+
+All installed packages are *activated* on emacs startup, i.e., emacs searches
+all sub-directories of [[info:elisp#Packaging Basics][package-user-dir]] and activates them.
+
+Following are few variables which control package installation as well activation:
+
+- [[info:elisp#Package Archives][package-archives]] determines package sources, i.e., location from which to
+  find packages
+- [[info:elisp#Packaging%20Basics][package-user-dir]] determines where packages get installed
+- [[info:elisp#Packaging%20Basics][package-load-list]] determines which
+  packages are initialized on startup among all the installed
+  package.  Default is to initialize all.
+
+Following are some of the functions related with packaging:
+
+- [[info:emacs#Package Menu][list-packages]] pops up "GUI" buffer so
+  that you can browes, install, and delete packages interactively.
+- [[info:elisp#Packaging%20Basics][package-initialize]] is implicitly called by default *after*
+  evaluating =~/.emacs=.  However you can also call this explicitly
+  in your =~/.emacs= early on to *activate* installed packages.
+
+* Emacs-Lisp
+** Elisp Basics
+:PROPERTIES:
+:CUSTOM_ID: elisp_basics
+:END:
+#+INDEX: elisp basics
+
+This chapter points out a few basic emacs-lisp concepts to help
+you understand how to install and use add-on packages.
+More comprehensive resources on learning elisp are listed at
+[[New User Resources]]
+
+Topics covered include
+- elisp files define functions, variables, and other objects
+- emacs loads (i.e., evaluates) files to pick up new functions, and also
+  possibly modify built-in features
+- [[info:elisp#Library Search][load-path]] tells emacs where to find elisp files
+- [[info:emacs#Lisp Libraries][autoload]] allows easy access to functions without using too much memory
+- elisp files are byte-compiled mainly for faster execution
+
+The core emacs code is written in C.  However much of built-in features of emacs
+is written in emacs-lisp which is a lisp dialect customized for use within
+emacs.  The core of emacs is the elisp *interpreter* (or a *virtual machine*).
+When you use emacs you are interacting with the interpreter which is in
+infinite *REPL*, i.e., [[info:elisp#Command Loop][Read-Eval-Print-Loop]].  It just sits there and waits for
+you to use input devices such as keyboards and mice to request actions.
+
+When you type anything on the keyboard or use mouse, you are executing elisp
+function bound to the key or mouse event that you just invoked.  For example if
+you type =m=, then you are asking the interpreter to call =self-insert-command=
+elisp function which just inserts the letter just typed into the current buffer.
+However =m= is bound to =dired-mark= elisp function instead of
+=self-insert-command= within buffers in [[info:emacs#Dired][dired-mode]] so that typing =m= results
+not in inserting letter =m=, but marking the current item in dired buffer.
+See [[info:emacs#Keys][Keys]], [[info:emacs#Keys][Commands]].
+
+You can use [[info:emacs#Key Help][C-h k]] to ask emacs to describe what any given key sequence would
+do rather than calling the function bound to that key sequence.  For example
+typing [[info:emacs#Key Help][C-h k]] followed by =m= in most buffers would say that the =m= key
+sequence is bound to =self-insert-command=.  Similarly typing [[info:emacs#Key Help][C-h k]] followed
+by =C-x C-f= brings up =*Help*= buffer describing [[info:emacs#Basic Files][find-file]] function.
+=*Help*= buffer should show *files.el* link at the top.[fn:elfiles]
+Clicking your mouse button on this *files.el* link
+should bring up =files.el= file showing emacs-lisp code that
+implements =find-file= function, i.e., you can browse the source code that make
+up emacs.  This is one key reason why I almost always use my own build of emacs
+rather than =/usr/bin/emacs= or other emacs builds provided someone else.
+
+Emacs function are written via [[info:elisp#Defining Functions][defun]] (among other ways) like this
+#+BEGIN_SRC elisp
+(defun f (arg1 arg2 ...) ...)
+#+END_SRC
+The side effect of evaluation this expression is that the lisp interpreter
+has added =f= function to its internal database of known functions.
+Similarly variables are set via [[info:elisp#Global Variables][setq]], [[info:elisp#Applying Customizations][custom-set-variables]],
+among other ways:
+#+BEGIN_SRC elisp
+(setq make-backup-files nil)
+#+END_SRC
+Evaluating this make the variable known to emacs.
+
+Functions and variables are put in emacs-lisp files such as =files.el= mentioned
+above.  Files are then [[info:elisp#Loading][loaded]] into emacs, i.e., the content of the file is
+[[info:elisp#Evaluation][evaluated]] by the elisp interpreter whose side effect is to tuck away the
+function and variable definitions so that they can be called or accessed.  In
+most cases new emacs-lisp code is made known to the interpreter by loading elisp
+files via one of these ways:
+
+- [[info:elisp#Loading][load-file]] evaluates the specified file whose side effect is to define
+  new functions and variables, and also possibly modify existing ones
+- [[info:elisp#Library Search][load-library]] first searches the directories listed in =load-path= (much like
+  how linux shells search =PATH=) for the specified file name, then calls
+  =load-file= on the located file
+- [[info:elisp#Named Features][require]] first search =features= variable to see if the requested module
+  is already loaded or not.  If is is already loaded, then nothing is done.
+  If it is not, then =load-library= is called.
+
+However you can also [[info:elisp#Evaluation][evaluate]] specific elisp expressions within
+buffers interactively via
+=eval-last-sexp= (bound to =C-x C-e=),
+=eval-print-last-sexp=,
+=eval-region=,
+=eval-current-buffer=,
+=eval-expression=,
+etc.
+
+# Some [[info:elisp#Functions][functions]] are referred to as *commands*.
+# These are a subset of all elisp functions which the user can call
+# *interactively* via either key bindings or via
+# [[info:elisp#Interactive Call][execute-extended-command]] wihch is bound to =M-x= key sequence.
+
+[fn:elfiles] If you don't see a link to an elisp file within =*Help*= buffer, it
+probably means that you don't have the elisp source files installed.  On Debian
+derived GNU/Linux systems, you can fix this via something like
+=sudo apt-get install emacs24-el=.
+
+** Elisp Expressions
+   :PROPERTIES:
+   :CUSTOM_ID: expressions
+   :END:
+#+INDEX: expressions
+
+Resources:
+
+- Use the =*scratch*= buffer to experiment and learn.  Use =C-j= to
+  call =eval-print-last-sexp=.
+- [[info:emacs-lisp-intro#Top]]
+- [[info:elisp#Eval]]
+- [[info:elisp#Loading]]
+
+Lisp expressions can be evaluated in many ways:
+
+- =C-x C-e= bound to =eval-last-sexp= evaluates one expression at a
+  time and prints the result in the mini-buffer
+- =eval-print-last-sexp= evaluates one expression and prints the
+  result in current buffer.  This is bound to =C-j= within buffers in
+  =lisp-interaction-mode= mode such as =*scratch*= buffer.
+- [[info:elisp#Eval][eval-region]] evaluates a region of elisp code
+- [[info:elisp#Eval][eval-buffer]] evaluates the whole buffer
+- [[info:elisp#How Programs Do Loading][load]] evaluates elisp code in a file
+- [[info:elisp#How Programs Do Loading][load-library]] evaluates elisp
+  code in a file but uses LOAD-PATH to locate the requested file
+- [[info:elisp#Named Features][require]] looks up
+  [[info:elisp#Named Features][features]] and if not found, then uses =load-libary= to
+  locate and load the file
+
+** Symbols
+   :PROPERTIES:
+   :CUSTOM_ID: symbols
+   :END:
+#+INDEX: symbols
+
+buffer-local dynamic lexical
+
+Resources:
+
+- [[info:elisp#Symbols]]
+- [[info:elisp#Variables]]
+- [[info:elisp#Functions]]
+- [[info:elisp#Eval]]
+
+Things to note:
+
+- a symbol is an object that has for components: name, value,
+  function and plist
+- Basic functions are [[info:elisp#Symbols][symbolp]], [[info:elisp#Creating Symbols][symbol-name]], [[info:elisp#Accessing Variables][symbol-value]], [[info:elisp#Creating Symbols][make-symbol]],
+  [[info:elisp#Creating Symbols][intern]], [[info:elisp#Creating Symbols][unintern]].
+- Property list functions are:
+  [[info:elisp#Symbol Plists][get]], [[info:elisp#Symbol Plists][put]], [[info:elisp#Symbol Plists][symbol-plist]], [[info:elisp#Symbol Plists][set-plist]]
+- [[info:elisp#Standard Properties]] lists properties that have
+  predefined meaning, e.g., =disabled= and =variable-documentation=.
+- [[info:elisp#Symbols][obarray]] is the container with all [[info:elisp#Creating Symbols][interned]] symbols.
+- =mapatoms= calls a function on all symbols.
+
+Bindings:
+- [[info:elisp#Dynamic Binding]]
+- [[info:elisp#Lexical Binding]]
+- [[info:elisp#Closures]]
+- [[info:elisp#Using Lexical Binding][lexical-binding]] variable
+- [[info:elisp#Using Lexical Binding][special-variable-p]]
+
+** Advising
+   :PROPERTIES:
+   :CUSTOM_ID: advising
+   :END:
+#+INDEX: advising
+
+Official documentation include:
+
+- [[info:elisp#Advising Functions][Advising Functions]] which discuss
+  the new (as of emacs 24.x) way to advise functions.
+- [[info:elisp#Porting old advices][Porting old advices]] shows you
+  how you can convert old style advices which used =defadvice= macro.
+
+Advising a functions means modifying the behavior of even built-in emacs
+functions to suit your needs.  This is one of the neatest features of
+lisp which I haven't yet seen in other languages that I used.  Advising
+was first added to emacs in late 1980's or early 1990's in emacs version
+18.
+
