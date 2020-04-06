@@ -1,0 +1,50 @@
+#+TITLE:     IDE Features provided by LSP
+#+AUTHOR:    Richard Kim
+#+EMAIL:     kimr@synopsys.com
+#+LANGUAGE:  en
+#+STARTUP:   content
+#+OPTIONS:   H:3 num:nil toc:t \n:nil ::t |:t ^:nil -:t f:t *:t d:nil tags:not-in-toc
+#+SETUPFILE: ~/public_html/org-html-themes/setup/theme-readtheorg-local.setup
+
+#+ATTR_HTML: :controls controls :width 780
+#+BEGIN_video
+#+HTML: <source src="pop-ups.mp4" type="video/mp4">
+Your browser does not support the video tag.
+#+END_video
+
+* Overview
+
+  
+* Vidoes
+
+** pop-ups.mp4
+
+   [[file:pop-ups.mp4][pop-ups.mp4]] is a one minute video which demonstrate following types of
+   pop-ups that automatically show up as the cursor is moved around.
+
+   - full type information about all symbols on current line
+   - documentation pop-up for symbol at cursor
+   - overloaded operator information in minibuffer
+** completion-popup.mp4
+
+   [[file:completion-popups.mp4][completion-popups.mp4]] is a two minute video which demonstrate completion
+   pop-ups.
+
+   - completion is provided for most incomplete expressions
+   - convenience feature to help one type in function arguments
+
+** finding-symbols.mp4
+
+   [[file:finding-symbols.mp4][finding-symbols.mp4]] is a 7 minute video demonstrating ways to locate 
+   place of symbol definitions as well their uses.
+
+   - jumping to place of definition for types, functions, variables, macros,
+     etc.
+   - jumping to local variables and function arguments
+   - jumping to overloaded operators
+   - listing all callers of a function and quickly browsing them
+   - listing all functions called within a function and quickly
+     browsing them
+   - listing all base classes and quickly browsing
+   - listing all derived classes and quickly browsing
+
