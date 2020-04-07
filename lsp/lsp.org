@@ -13,38 +13,34 @@ Your browser does not support the video tag.
 #+END_video
 
 * Overview
-
   
 * Vidoes
 
-** pop-ups.mp4
+** Automatic Pop-ups
 
-   [[file:pop-ups.mp4][pop-ups.mp4]] is a one minute video which demonstrate following types of
+   [[file:pop-ups.webm][pop-ups.webm]] is a three minute video which demonstrate following types of
    pop-ups that automatically show up as the cursor is moved around.
 
    - full type information about all symbols on current line
    - documentation pop-up for symbol at cursor
    - overloaded operator information in minibuffer
-** completion-popup.mp4
 
-   [[file:completion-popups.mp4][completion-popups.mp4]] is a two minute video which demonstrate completion
-   pop-ups.
+** Name Completions
+
+   [[file:name-completions.webm][name-completions.webm]] is a three minute video which demonstrate name
+   completion pop-ups.
 
    - completion is provided for most incomplete expressions
    - convenience feature to help one type in function arguments
+   - fuzzy matching
 
-** finding-symbols.mp4
+** Jumping to Defintions
 
-   [[file:finding-symbols.mp4][finding-symbols.mp4]] is a 7 minute video demonstrating ways to locate 
-   place of symbol definitions as well their uses.
+   [[file:jumping-to-definition.webm][jumping-to-definition.webm]] is a 2 to 3 minute video demonstrating how one
+   can quickly jump to places of definition for not only types and functions,
+   but also to local variables, function arguments, and overloaded operators.
 
-   - jumping to place of definition for types, functions, variables, macros,
-     etc.
-   - jumping to local variables and function arguments
-   - jumping to overloaded operators
-   - listing all callers of a function and quickly browsing them
-   - listing all functions called within a function and quickly
-     browsing them
-   - listing all base classes and quickly browsing
-   - listing all derived classes and quickly browsing
+** Call Hierarchy
 
+   [[file:call-hierarchy.webm][call-hierarchy.webm]] is a 3 to 4 minute video which shows you how you 
+   can not only list but jump around the call hiearchy.
