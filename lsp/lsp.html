@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-04-06 Mon 18:22 -->
+<!-- 2020-04-07 Tue 08:01 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>IDE Features provided by LSP</title>
@@ -192,14 +192,14 @@
   .org-svg { width: 90%; }
   /*]]>*/-->
 </style>
-<link rel="stylesheet" type="text/css" href="styles/readtheorg/css/htmlize.css"/>
-<link rel="stylesheet" type="text/css" href="styles/readtheorg/css/readtheorg.css"/>
-<script type="text/javascript" src="styles/lib/js/jquery.min.js"></script>
-<script type="text/javascript" src="styles/lib/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="styles/lib/js/jquery.stickytableheaders.min.js"></script>
-<script type="text/javascript" src="styles/readtheorg/js/readtheorg.js"></script>
+<link rel="stylesheet" type="text/css" href="https://github.com/fniessen/org-html-themes/tree/master/styles/readtheorg/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="https://github.com/fniessen/org-html-themes/tree/master/styles/readtheorg/css/readtheorg.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://github.com/fniessen/org-html-themes/tree/master/styles/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="https://github.com/fniessen/org-html-themes/tree/master/styles/readtheorg/js/readtheorg.js"></script>
 <script type="text/javascript">
-// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
+// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&dn=gpl-3.0.txt GPL-v3-or-Later
 <!--/*--><![CDATA[/*><!--*/
      function CodeHighlightOn(elem, id)
      {
@@ -229,37 +229,62 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org53fdf98">Overview</a></li>
-<li><a href="#org6f46366">Vidoes</a>
+<li><a href="#org3aa92bd">Overview</a></li>
+<li><a href="#orga056524">Show and Tell</a>
 <ul>
-<li><a href="#orgcc45c3f">Automatic Pop-ups</a></li>
-<li><a href="#orgdc65654">Name Completions</a></li>
-<li><a href="#org10bd869">Jumping to Defintions</a></li>
-<li><a href="#orgd9fa65d">Call Hierarchy</a></li>
+<li><a href="#org223f230">Automatic Pop-ups</a></li>
+<li><a href="#org8c3348c">Name Completions</a></li>
+<li><a href="#org0c28bfb">Jumping to Definitions</a></li>
+<li><a href="#orgad8511a">Call Hierarchy</a></li>
 </ul>
 </li>
+<li><a href="#orgc076c66">How to Setup</a></li>
+<li><a href="#org4498e71">How to Use</a></li>
+<li><a href="#orgb491b13">How it Works</a></li>
 </ul>
 </div>
 </div>
-<div controls="controls" width="780" class="video">
-<source src="pop-ups.mp4" type="video/mp4">
+
+<div id="outline-container-org3aa92bd" class="outline-2">
+<h2 id="org3aa92bd">Overview</h2>
+<div class="outline-text-2" id="text-org3aa92bd">
 <p>
-Your browser does not support the video tag.
+I would like to share my experience with very useful IDE (Integrated
+Development Environment) features available these days for many programming
+languages especially C++ which is becoming harder to read without a modern
+IDE.
 </p>
 
+<p>
+I wrote this document and placed on my public github repo at
+<a href="https://github.com/emacs18/notes/tree/master/lsp">https://github.com/emacs18/notes/tree/master/lsp</a>. I just needed a place that
+I could access from my personal laptop to my work laptop so that I can
+transfer files from home to work.
+</p>
+
+<p>
+<a href="#orga056524">Show and Tell</a> section has few short videos to demonstrate some of the features.
+</p>
+
+<p>
+<a href="#orgc076c66">How to Setup</a> and <a href="#org4498e71">How to Use</a> sections need to be written.
+</p>
+</div>
 </div>
 
-<div id="outline-container-org53fdf98" class="outline-2">
-<h2 id="org53fdf98">Overview</h2>
+<div id="outline-container-orga056524" class="outline-2">
+<h2 id="orga056524">Show and Tell</h2>
+<div class="outline-text-2" id="text-orga056524">
+<p>
+I prepared few short videos to demonstrate some of the features of the C++
+IDE. I used a screen capture program called Kazam to create these videos on
+my personal laptop running Ubuntu 18.04.
+</p>
 </div>
 
-<div id="outline-container-org6f46366" class="outline-2">
-<h2 id="org6f46366">Vidoes</h2>
-<div class="outline-text-2" id="text-org6f46366">
-</div>
-<div id="outline-container-orgcc45c3f" class="outline-3">
-<h3 id="orgcc45c3f">Automatic Pop-ups</h3>
-<div class="outline-text-3" id="text-orgcc45c3f">
+<div id="outline-container-org223f230" class="outline-3">
+<h3 id="org223f230">Automatic Pop-ups</h3>
+<div class="outline-text-3" id="text-org223f230">
 <p>
 <a href="pop-ups.webm">pop-ups.webm</a> is a three minute video which demonstrate following types of
 pop-ups that automatically show up as the cursor is moved around.
@@ -267,15 +292,15 @@ pop-ups that automatically show up as the cursor is moved around.
 
 <ul class="org-ul">
 <li>full type information about all symbols on current line</li>
+<li>more complete information on the current symbol under cursor at bottom</li>
 <li>documentation pop-up for symbol at cursor</li>
-<li>overloaded operator information in minibuffer</li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgdc65654" class="outline-3">
-<h3 id="orgdc65654">Name Completions</h3>
-<div class="outline-text-3" id="text-orgdc65654">
+<div id="outline-container-org8c3348c" class="outline-3">
+<h3 id="org8c3348c">Name Completions</h3>
+<div class="outline-text-3" id="text-org8c3348c">
 <p>
 <a href="name-completions.webm">name-completions.webm</a> is a three minute video which demonstrate name
 completion pop-ups.
@@ -283,37 +308,114 @@ completion pop-ups.
 
 <ul class="org-ul">
 <li>completion is provided for most incomplete expressions</li>
-<li>convenience feature to help one type in function arguments</li>
-<li>fuzzy matching</li>
+<li>convenience feature to help typing function arguments</li>
+<li>fuzzy matching and auto correction</li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org10bd869" class="outline-3">
-<h3 id="org10bd869">Jumping to Defintions</h3>
-<div class="outline-text-3" id="text-org10bd869">
+<div id="outline-container-org0c28bfb" class="outline-3">
+<h3 id="org0c28bfb">Jumping to Definitions</h3>
+<div class="outline-text-3" id="text-org0c28bfb">
 <p>
 <a href="jumping-to-definition.webm">jumping-to-definition.webm</a> is a 2 to 3 minute video demonstrating how one
 can quickly jump to places of definition for not only types and functions,
-but also to local variables, function arguments, and overloaded operators.
+but also local variables, function arguments, and even overloaded operators.
 </p>
 </div>
 </div>
 
-<div id="outline-container-orgd9fa65d" class="outline-3">
-<h3 id="orgd9fa65d">Call Hierarchy</h3>
-<div class="outline-text-3" id="text-orgd9fa65d">
+<div id="outline-container-orgad8511a" class="outline-3">
+<h3 id="orgad8511a">Call Hierarchy</h3>
+<div class="outline-text-3" id="text-orgad8511a">
 <p>
 <a href="call-hierarchy.webm">call-hierarchy.webm</a> is a 3 to 4 minute video which shows you how you 
 can not only list but jump around the call hiearchy.
 </p>
+
+<p>
+Caller hierarchy displays "called by" relationships via indentation, i.e.,
+if A is called by B and C, then B and C are shown under A indented to the
+right.
+</p>
+
+<pre class="example">
+   A
+       B
+       C
+</pre>
+
+<p>
+Callee hierarchy displays "callee" relationships, where if B and C are
+called within A, then the called functions are indented like this:
+</p>
+
+<pre class="example">
+   A
+       B
+       C
+</pre>
+
+<p>
+You can collapse or expand the hierarchy simply by hitting <code>TAB</code>.
+</p>
 </div>
+</div>
+</div>
+<div id="outline-container-orgc076c66" class="outline-2">
+<h2 id="orgc076c66">How to Setup</h2>
+<div class="outline-text-2" id="text-orgc076c66">
+<p>
+To be written.
+</p>
+
+<p>
+I plan on detailing how I use
+spacemacs, along with 
+lsp
+ccls
+</p>
+</div>
+</div>
+
+<div id="outline-container-org4498e71" class="outline-2">
+<h2 id="org4498e71">How to Use</h2>
+<div class="outline-text-2" id="text-org4498e71">
+<p>
+To be written.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgb491b13" class="outline-2">
+<h2 id="orgb491b13">How it Works</h2>
+<div class="outline-text-2" id="text-orgb491b13">
+<p>
+The <a href="https://github.com/Microsoft/language-server-protocol">Language Server Protocol</a> (see also <a href="https://en.wikipedia.org/wiki/Language_Server_Protocol">wikipedia article</a>) defines a
+communication protocol which defines the roles of IDE's (e.g., emacs, vim,
+eclipse, etc., also known as frontends) and code parsers (also known as
+backends) so that the same IDE can work for many different languages so long
+as backends are available for them.
+</p>
+
+<p>
+Today many frontends and backends are available to allow rich IDE features for
+many languages. As mentioned at <a href="https://langserver.org/">https://langserver.org/</a>, <a href="https://www.gnu.org/software/emacs">emacs</a> is one of many
+LSP frontends. Also <a href="https://github.com/MaskRay/ccls">ccls</a> is one of several C++ backends. In addition <a href="https://github.com/syl20bnr/spacemacs">spacemacs</a>
+is a very large add-on to emacs which provides many features including very
+comprehensive vim emulation as well as LSP.
+</p>
+
+<p>
+My setup uses <a href="https://www.gnu.org/software/emacs">emacs</a>, <a href="https://github.com/MaskRay/ccls">ccls</a>, and <a href="https://github.com/syl20bnr/spacemacs">spacemacs</a>. I use both vim and emacs styles
+within spacemacs.
+</p>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2020-04-06 Mon 18:22</p>
-<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+<p class="date">Created: 2020-04-07 Tue 08:01</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
 </html>

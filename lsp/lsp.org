@@ -5,16 +5,30 @@
 #+STARTUP:   content
 #+OPTIONS:   H:3 num:nil toc:t \n:nil ::t |:t ^:nil -:t f:t *:t d:nil tags:not-in-toc
 #+SETUPFILE: ~/public_html/org-html-themes/setup/theme-readtheorg-local.setup
-
-#+ATTR_HTML: :controls controls :width 780
-#+BEGIN_video
-#+HTML: <source src="pop-ups.mp4" type="video/mp4">
-Your browser does not support the video tag.
-#+END_video
+# #+SETUPFILE: https://github.com/fniessen/org-html-themes/tree/master/setup/theme-readtheorg.setup
+# (replace-string "https://us03wwwin/~kimr" "https://github.com/fniessen/org-html-themes/tree/master")
 
 * Overview
-  
-* Vidoes
+
+  I would like to share my experience with very useful IDE (Integrated
+  Development Environment) features available these days for many programming
+  languages especially C++ which is becoming harder to read without a modern
+  IDE.
+
+  I wrote this document and placed on my public github repo at
+  https://github.com/emacs18/notes/tree/master/lsp. I just needed a place that
+  I could access from my personal laptop to my work laptop so that I can
+  transfer files from home to work.
+
+  [[Show and Tell]] section has few short videos to demonstrate some of the features.
+
+  [[How to Setup]] and [[How to Use]] sections need to be written.
+
+* Show and Tell
+
+  I prepared few short videos to demonstrate some of the features of the C++
+  IDE. I used a screen capture program called Kazam to create these videos on
+  my personal laptop running Ubuntu 18.04.
 
 ** Automatic Pop-ups
 
@@ -22,8 +36,8 @@ Your browser does not support the video tag.
    pop-ups that automatically show up as the cursor is moved around.
 
    - full type information about all symbols on current line
+   - more complete information on the current symbol under cursor at bottom
    - documentation pop-up for symbol at cursor
-   - overloaded operator information in minibuffer
 
 ** Name Completions
 
@@ -31,16 +45,66 @@ Your browser does not support the video tag.
    completion pop-ups.
 
    - completion is provided for most incomplete expressions
-   - convenience feature to help one type in function arguments
-   - fuzzy matching
+   - convenience feature to help typing function arguments
+   - fuzzy matching and auto correction
 
-** Jumping to Defintions
+** Jumping to Definitions
 
    [[file:jumping-to-definition.webm][jumping-to-definition.webm]] is a 2 to 3 minute video demonstrating how one
    can quickly jump to places of definition for not only types and functions,
-   but also to local variables, function arguments, and overloaded operators.
+   but also local variables, function arguments, and even overloaded operators.
 
 ** Call Hierarchy
 
    [[file:call-hierarchy.webm][call-hierarchy.webm]] is a 3 to 4 minute video which shows you how you 
    can not only list but jump around the call hiearchy.
+
+   Caller hierarchy displays "called by" relationships via indentation, i.e.,
+   if A is called by B and C, then B and C are shown under A indented to the
+   right.
+   
+   #+begin_example
+   A
+       B
+       C
+   #+end_example
+
+   Callee hierarchy displays "callee" relationships, where if B and C are
+   called within A, then the called functions are indented like this:
+ 
+   #+begin_example
+   A
+       B
+       C
+   #+end_example
+
+   You can collapse or expand the hierarchy simply by hitting ~TAB~.
+* How to Setup
+
+  To be written.
+
+  I plan on detailing how I use
+  spacemacs, along with 
+  lsp
+  ccls
+
+* How to Use
+
+  To be written.
+  
+* How it Works
+  
+  The [[https://github.com/Microsoft/language-server-protocol][Language Server Protocol]] (see also [[https://en.wikipedia.org/wiki/Language_Server_Protocol][wikipedia article]]) defines a
+  communication protocol which defines the roles of IDE's (e.g., emacs, vim,
+  eclipse, etc., also known as frontends) and code parsers (also known as
+  backends) so that the same IDE can work for many different languages so long
+  as backends are available for them.
+
+  Today many frontends and backends are available to allow rich IDE features for
+  many languages. As mentioned at https://langserver.org/, [[https://www.gnu.org/software/emacs][emacs]] is one of many
+  LSP frontends. Also [[https://github.com/MaskRay/ccls][ccls]] is one of several C++ backends. In addition [[https://github.com/syl20bnr/spacemacs][spacemacs]]
+  is a very large add-on to emacs which provides many features including very
+  comprehensive vim emulation as well as LSP.
+  
+  My setup uses [[https://www.gnu.org/software/emacs][emacs]], [[https://github.com/MaskRay/ccls][ccls]], and [[https://github.com/syl20bnr/spacemacs][spacemacs]]. I use both vim and emacs styles
+  within spacemacs.
